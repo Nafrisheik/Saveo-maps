@@ -33,7 +33,7 @@ function reset() {
 
   return (
     <>
-          <Button onClick={reset} style={{ width: '84px',height: '42px',color:'##A0A3A5',
+          <Button onClick={reset} style={{ width: '84px',height: '42px',background:'#F2FAFF',color:'#A0A3A5',
 borderRadius: '4px',
 opacity: '1'}}>Home</Button>
       <Container>
