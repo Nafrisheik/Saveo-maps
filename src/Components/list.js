@@ -8,8 +8,8 @@ function Coordinates(props) {
 
     }
   return (  
-    <Container>
-      <Table borderless>
+    <Container >
+      <Table borderless style={{backgroundColor:'#F2FAFF'}}>
         <thead>
             <tr>
                 <th><b>ALL CO-ORDINATES</b></th>
@@ -34,7 +34,7 @@ function Coordinates(props) {
           })}
         </tbody>
       </Table>
-      <Button onClick={settoDirection} style={{ position: "absolute", bottom: 0, width:'80%',color:'#FFFFFF',opacity:'100%',borderRadius:'21px'}}>
+      <Button onClick={settoDirection} style={{ position: "absolute", bottom: 0, width:'80%',background:'#074770' ,color:'#FFFFFF',opacity:'100%',borderRadius:'21px'}}>
           Show route
         </Button>
     </Container>
