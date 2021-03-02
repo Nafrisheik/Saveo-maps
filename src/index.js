@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render (
   <React.StrictMode>
-    <App  style={{background:'#72A1BF'}} />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
