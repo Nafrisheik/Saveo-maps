@@ -1,24 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import InputComp from "./Components/input";
+import MapWithADirectionsRenderer from "./Components/mapComponent";
+import Coordinates from "./Components/list";
+import { Container, Row, Col, Card } from "reactstrap";
+import { Button } from "reactstrap";
 
 function App() {
+  const [placeList, setPlace] = useState([]);
+  const [checkRoute, setTrue]=useState(false);
+
+  const addEntry = (loc, lat, lon) => {
+    setPlace([
+      ...placeList,
+      {
+        place: loc,
+        latitude: parseFloat(lat),
+        longitude: parseFloat(lon),
+      },
+    ]);
+  };
+const addtoDirection=()=>{
+setTrue(true);
+
+}
+function reset() {
+  setPlace([]);
+  setTrue(false);
+  
+}
+  console.log(placeList);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+          <Button onClick={reset} style={{ width: '84px',height: '42px',color:'##A0A3A5',
+borderRadius: '4px',
+opacity: '1'}}>Home</Button>
+      <Container>
+        <Card>
+          <Row>
+            <Col style={{ backgroundColor: "#074770" }}>
+              <InputComp addEntry={addEntry}></InputComp>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Coordinates style={{background:'#074770'}} addtoDirection={addtoDirection} names={placeList}></Coordinates>
+            </Col>
+            <Col className="map">
+              <MapWithADirectionsRenderer checkRoute={checkRoute}
+                placeList={placeList}
+              ></MapWithADirectionsRenderer>
+            </Col>
+          </Row>
+        </Card>
+      </Container>
+    </>
   );
 }
 
