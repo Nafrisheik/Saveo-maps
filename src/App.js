@@ -45,7 +45,7 @@ opacity: '1'}}>Home</Button>
           </Row>
           <Row>
             <Col>
-              <Coordinates style={{background:'#074770'}} addtoDirection={addtoDirection} names={placeList}></Coordinates>
+              <Coordinates addtoDirection={addtoDirection} names={placeList}></Coordinates>
             </Col>
             <Col className="map">
               <MapWithADirectionsRenderer checkRoute={checkRoute}
